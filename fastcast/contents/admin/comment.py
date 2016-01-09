@@ -26,6 +26,7 @@ class CommentModelAdmin(admin.ModelAdmin):
     )
 
     readonly_fields = (
+        'parent',
         'page',
         'user',
     )

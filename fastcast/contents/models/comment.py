@@ -18,6 +18,13 @@ class Comment(models.Model):
     page = models.ForeignKey('Page')
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
 
+    parent = models.ForeignKey(
+        'self',
+        blank=True,
+        null=True,
+        verbose_name='상위 댓글',
+    )
+
     content = models.TextField(
         verbose_name='내용'
     )

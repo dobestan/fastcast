@@ -33,10 +33,14 @@ class Command(BaseCommand):
             name = fake.name()
             address = fake.address().replace('\n', '').replace('  ', ' ')  # Faker address generator contains newline character.
 
+            # 자동으로 생성된 유저는 5% 의 확률로 에디터가 된다.
+            is_editor = True if random.randint(0, 99) < 5 else False
+
             user = User.objects.create(
                 username=username,
                 name=name,
                 address=address,
+                is_editor=is_editor,
             )
 
             self.stdout.write("{username}, {name}, {address}".format(

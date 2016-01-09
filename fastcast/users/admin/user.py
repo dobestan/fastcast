@@ -13,9 +13,12 @@ class UserModelAdmin(DefaultUserAdmin):
 
         'name',
         'address',
+
+        'is_editor',
     )
 
     list_filter = DefaultUserAdmin.list_filter + (
+        'is_editor',
     )
 
     search_fields = DefaultUserAdmin.search_fields + (

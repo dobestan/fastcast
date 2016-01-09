@@ -20,6 +20,11 @@ class User(AbstractUser):
         verbose_name='주소지',
     )
 
+    is_editor = models.BooleanField(
+        default=False,
+        verbose_name='에디터',
+    )
+
     objects = UserManager()
 
     class Meta:

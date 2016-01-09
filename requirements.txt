@@ -1,2 +1,3 @@
 Django
 fake-factory
+Pillow

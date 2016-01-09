@@ -24,3 +24,4 @@ loaddata_all:
 	python fastcast/manage.py loaddata_users
 	python fastcast/manage.py loaddata_contents
 	python fastcast/manage.py loaddata_pages
+	python fastcast/manage.py loaddata_comments

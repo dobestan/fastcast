@@ -43,4 +43,7 @@ class Page(models.Model):
         verbose_name_plural = verbose_name
 
     def __str__(self):
-        pass
+        return "{content_title} - {description}".format(
+            content_title=self.content.title,
+            description=self.description,
+        )

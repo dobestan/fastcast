@@ -43,5 +43,5 @@ class Comment(models.Model):
     def __str__(self):
         return "<{user_name} commented on {content_name}>".format(
             user_name=self.user.name,
-            content_name=self.page.content.name,
+            content_name=self.page.content.title,
         )

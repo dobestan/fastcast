@@ -17,3 +17,10 @@ migrate:
 # target: clean_migration - folders in all django apps
 clean_migrations:
 	ls fastcast/ | grep -v -e 'manage.py' | xargs -I{} rm -rf fastcast/{}/migrations/
+
+
+# target: loaddata_all - load all data from commands
+loaddata_all:
+	python fastcast/manage.py loaddata_users
+	python fastcast/manage.py loaddata_contents
+	python fastcast/manage.py loaddata_pages

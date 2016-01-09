@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 
 
@@ -44,6 +45,12 @@ class Content(models.Model):
         blank=True,
         null=True,
         verbose_name='라인 공유 횟수',
+    )
+
+    # Like
+    likes = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        related_name='content_like_set',
     )
 
     objects = ContentManager()

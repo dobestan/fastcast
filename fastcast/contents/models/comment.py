@@ -29,6 +29,11 @@ class Comment(models.Model):
         verbose_name='내용'
     )
 
+    likes = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        related_name='comment_like_set',
+    )
+
     objects = CommentManager()
 
     class Meta:
